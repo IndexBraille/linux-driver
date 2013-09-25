@@ -3,6 +3,7 @@
 #include <stdarg.h>
 #include <stdlib.h>
 #include <time.h>
+#include <errno.h>
 #include "datatypes.h"
 
 #include <sys/types.h>
@@ -84,6 +85,7 @@ const languageData languages[NumLanguages] = {
 size_t WriteFormatString(FILE *f, const char *format, ...);
 size_t WriteString(FILE *f, const char *s);
 
+#if 0
 static void WriteOption(FILE *f, OptionPair pair, const char *avoidOption)
 {
 	char *s;
@@ -116,6 +118,7 @@ static void WriteOption(FILE *f, OptionPair pair, const char *avoidOption)
 	
 	WriteFormatString(f, "*CloseUI: *%s\n\n", pair.theOption->optName);
 }
+#endif
 
 size_t WriteString(FILE *f, const char *s)
 {
@@ -140,13 +143,13 @@ static int MakeDir(const char *subdir)
 	return mkdir(subdir, mode);
 }
 
-static void zipfile(const char *filename)
+static int zipfile(const char *filename)
 {
 	char cmdline[1024];
 	
-	sprintf(cmdline, "/usr/bin/gzip -f ");
+	sprintf(cmdline, "/bin/gzip -f ");
 	strcat(cmdline, filename);
-	system(cmdline);
+	return system(cmdline);
 }
 
 char *GetCurrentTime(char *timestring, size_t bufsize)
@@ -161,8 +164,6 @@ char *GetCurrentTime(char *timestring, size_t bufsize)
 	return timestring;
 }
 
-extern int errno;
-
 void GenerateFiles()
 {
 	int i, j;
@@ -174,11 +175,14 @@ void GenerateFiles()
 			MakeDir(languages[j].langFolderName);
 			char filename[256];
 			char dateString[256];
+			strcpy(filename, "./");
+#if 0
 			strcpy(filename, "../../Output/");
 #ifdef DEBUG
 			strcat(filename, "Debug/");
 #else
 			strcat(filename, "Release/");
+#endif
 #endif
 			strcat(filename, languages[j].langFolderName);
 			strcat(filename, "/");
@@ -213,9 +217,9 @@ void GenerateFiles()
 
 			WriteFormatString(f,  "*cupsVersion:		1.1\n");
 			// WriteFormatString(f,  "*cupsFilter:		\"%s %d %s\"\n\n",  printers[i].mimetype, printers[i].penalty, printers[i].driverName);
-			WriteFormatString(f,  "*cupsFilter:		\"%s %d %s\"\n\n",  printers[i].mimetype, printers[i].penalty, printers[i].driverName);
-			WriteFormatString(f,  "*cupsFilter:		\"%s %d %s\"\n\n",  "application/postscript", printers[i].penalty, printers[i].driverName);
-			WriteFormatString(f,  "*cupsFilter:		\"%s %d %s\"\n\n",  "text/plain", printers[i].penalty, printers[i].driverName);
+			//WriteFormatString(f,  "*cupsFilter:		\"%s %d %s\"\n\n",  printers[i].mimetype, printers[i].penalty, printers[i].driverName);
+			//WriteFormatString(f,  "*cupsFilter:		\"%s %d %s\"\n\n",  "application/postscript", printers[i].penalty, printers[i].driverName);
+			WriteFormatString(f,  "*cupsFilter:		\"%s %d %s\"\n\n",  "text/plain", printers[i].penalty, "-"); //printers[i].driverName);
 	
 			WriteFormatString(f, chunks[PPDBasicCap]);
 			WriteFormatString(f, chunks[PPDGeneral]);
