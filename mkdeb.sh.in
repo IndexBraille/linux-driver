@@ -1,0 +1,18 @@
+#!/bin/sh
+
+DEB_DIST=dist-deb
+DISTDIR=$DEB_DIST/@PACKAGE@-@VERSION@
+DISTFILE=@PACKAGE@-@VERSION@.tar.bz2
+DISTFILE_ORIG=@PACKAGE@_@VERSION@.orig.tar.bz2
+
+make dist-bzip2 || exit 1
+
+rm -rf $DISTDIR
+mkdir -p $DISTDIR || exit 1
+tar xjf $DISTFILE -C $DEB_DIST
+
+cp -r debian $DISTDIR || exit 1
+mv $DISTFILE $DEB_DIST/$DISTFILE_ORIG || exit 1
+cd $DISTDIR || exit 1
+
+debuild -us -uc
