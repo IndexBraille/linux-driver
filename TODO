@@ -1,3 +1,2 @@
 TODO:
-* Generate a single file where the user can manually choose the correct driver.
-* Create the LSP-specification files.
+* Generate a single file where the user can manually choose the correct driver, is this possible? (Possibly fixed, needs testing...).
