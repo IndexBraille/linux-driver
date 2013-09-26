@@ -1,0 +1,63 @@
+#include <media.defs>
+
+#define MANUFACTURER "Index Braille"
+{
+  	Manufacturer "$MANUFACTURER"
+	ModelName "Everest"
+	Version 4.0
+	
+	PCFileName "Everest.ppd"
+	
+	HWMargins 18 36 18 36
+	
+	#include "media.defs"
+	#include "filter.defs"
+}
+{
+	Manufacturer "$MANUFACTURER"
+	ModelName "BasicD"
+	Version 4.0
+	
+	PCFileName "BasicD.ppd"
+	
+	HWMargins 18 36 18 36
+	
+	#include "media.defs"
+	#include "filter.defs"
+}
+{
+	Manufacturer "$MANUFACTURER"
+	ModelName "BasicS"
+	Version 4.0
+	
+	PCFileName "BasicS.ppd"
+	
+	HWMargins 18 36 18 36
+	
+	#include "media.defs"
+	#include "filter.defs"
+}
+{
+	Manufacturer "$MANUFACTURER"
+	ModelName "4Waves"
+	Version 4.0
+	
+	PCFileName "4WavPRO.ppd"
+	
+	HWMargins 18 36 18 36
+	
+	#include "media.defs"
+	#include "filter.defs"
+}
+{
+	Manufacturer "$MANUFACTURER"
+	ModelName "4x4"
+	Version 4.0
+	
+	PCFileName "4x4PRO.ppd"
+	
+	HWMargins 18 36 18 36
+	
+	#include "media.defs"
+	#include "filter.defs"
+}
