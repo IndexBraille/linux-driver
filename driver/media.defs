@@ -1,0 +1,16 @@
+#media "110x115/11x11.5"	792	828
+#media "110x120/11x12"		792	864
+#media "110x170/11x17"		792	1224
+#media "115x110/11.5x11"	828	792
+#media "A4TF/A4 Tractor Feed"	594	846
+
+MediaSize Legal
+MediaSize Letter
+MediaSize A3
+*MediaSize A4
+MediaSize A5
+MediaSize 110x115
+MediaSize 110x120
+MediaSize 110x170
+MediaSize 115x110
+MediaSize A4TF
