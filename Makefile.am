@@ -1,10 +1,11 @@
 cupsfilterdir = $(libdir)/cups/filter
 dist_cupsfilter_SCRIPTS = filter/indexbraille.sh
 
-EXTRA_DIST = \
+cupsdrvdir = $(datadir)/cups/drv
+dist_cupsdrv_DATA = \
 	driver/indexbraille.drv \
-	driver/media.defs \
-	driver/filter.defs
+	driver/indexbraille-media.defs \
+	driver/indexbraille-filter.defs
 
 cupsppddir = $(datadir)/cups/ppd
 dist_cupsppd_DATA = \

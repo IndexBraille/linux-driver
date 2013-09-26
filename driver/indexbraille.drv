@@ -10,8 +10,8 @@
 	
 	HWMargins 18 36 18 36
 	
-	#include "media.defs"
-	#include "filter.defs"
+	#include "indexbraille-media.defs"
+	#include "indexbraille-filter.defs"
 }
 {
 	Manufacturer "$MANUFACTURER"
@@ -22,8 +22,8 @@
 	
 	HWMargins 18 36 18 36
 	
-	#include "media.defs"
-	#include "filter.defs"
+	#include "indexbraille-media.defs"
+	#include "indexbraille-filter.defs"
 }
 {
 	Manufacturer "$MANUFACTURER"
@@ -34,8 +34,8 @@
 	
 	HWMargins 18 36 18 36
 	
-	#include "media.defs"
-	#include "filter.defs"
+	#include "indexbraille-media.defs"
+	#include "indexbraille-filter.defs"
 }
 {
 	Manufacturer "$MANUFACTURER"
@@ -46,8 +46,8 @@
 	
 	HWMargins 18 36 18 36
 	
-	#include "media.defs"
-	#include "filter.defs"
+	#include "indexbraille-media.defs"
+	#include "indexbraille-filter.defs"
 }
 {
 	Manufacturer "$MANUFACTURER"
@@ -58,6 +58,6 @@
 	
 	HWMargins 18 36 18 36
 	
-	#include "media.defs"
-	#include "filter.defs"
+	#include "indexbraille-media.defs"
+	#include "indexbraille-filter.defs"
 }
