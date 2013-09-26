@@ -1,0 +1,12 @@
+Source: printer-driver-indexbraille
+Section: text
+Priority: optional
+Maintainer: Simon Aittamaa <simon.aittamaa@neava.se>
+Build-Depends: debhelper (>= 8.0.0), autotools-dev
+Standards-Version: 3.9.3
+Homepage: http://www.indexbraille.com
+
+Package: printer-driver-indexbraille
+Architecture: all
+Depends: ${misc:Depends}
+Description: CUPS-filter and ppds for Index Braille printers.
