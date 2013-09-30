@@ -9,6 +9,7 @@ Homepage: http://www.indexbraille.com
 Package: printer-driver-indexbraille
 Architecture: all
 Depends: ${misc:Depends}
+Recommends: cups (>= 1.4.0)
 Description: Enables CUPS printing to Index Braille printers.
  This package contans the necessary filters and PPDs for installing and
  printing to Index Braille printers.
