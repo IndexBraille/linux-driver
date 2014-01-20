@@ -21,3 +21,4 @@ ppd
 # Sublime-specific files.
 *.sublime-*
 last.verification.log
+COPYING
