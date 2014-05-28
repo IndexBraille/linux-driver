@@ -4,6 +4,7 @@ AM_INIT_AUTOMAKE
 
 AC_CONFIG_SRCDIR([filter/indexbraille.sh])
 
+AC_PROG_CC
 AC_PROG_INSTALL
 AC_CHECK_PROG([PPDC], [ppdc], [ppdc])
 if ! test x$PPDC = xppdc

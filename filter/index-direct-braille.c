@@ -13,7 +13,7 @@ static void output(int c) {
 	 * bug in the printer usb-driver (or hardware?).
 	 */
 	bytes_written++;
-	if (fputc(c) == EOF) {
+	if (fputc(c, stdout) == EOF) {
 		fprintf(stderr, "ERROR: Unable to write to stdout: %s.\r\n", strerror(errno));
 		exit(1);
 	}
@@ -25,7 +25,7 @@ static void output(int c) {
 enum {
 	SUB=0x1a,
 	ESC=0x1b
-}
+} escape_characters_t;
 
 int main(int argc, char **argv) {
 	char *tmp;
@@ -61,7 +61,7 @@ int main(int argc, char **argv) {
 	}
 
 	/** Check if we should produce more than one copy. */
-	copies = strol(argv[4], &tmp, 10);
+	copies = strtol(argv[4], &tmp, 10);
 	if (tmp == argv[4]) {
 		fprintf(stderr, "WARNING: Unable to parse number of copies '%s', assuming 1 copy.\r\n", argv[4]);
 		copies = 1;

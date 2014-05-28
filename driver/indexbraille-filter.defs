@@ -1,3 +1,4 @@
 Filter text/plain 0 indexbraille.sh
-Filter application/pdf 0 indexbraille.sh
+Filter application/pdf 0 index-direct-braille
+Filter application/msword 0 index-direct-braille
 Filter application/octet-stream 0 -

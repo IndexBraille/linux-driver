@@ -17,6 +17,8 @@ INSTALL
 mkdeb.sh
 dist-deb
 ppd
+index-direct-braille
+index-direct-braille.o
 
 # Sublime-specific files.
 *.sublime-*
