@@ -6,10 +6,6 @@ FILENAME="$6"
 # The extra number of bytes we send.
 EXTRA_BYTES=0
 
-# Prefix with escape (033) + I, to indicate that this is an IDB file.
-printf "\033I"
-EXTRA_BYTES="${EXTRA_BYTES} + 2"
-
 # Pass the document through unmolested. We only want to terminate
 # the document with ASCII SUB (see below) in order to start printing
 # immediately (printer should print after 5 seconds anyway, but
