@@ -1,2 +1,3 @@
 Filter text/plain 0 indexbraille.sh
+Filter application/pdf 0 indexbraille.sh
 Filter application/octet-stream 0 -

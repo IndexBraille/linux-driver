@@ -3,6 +3,13 @@
 # Arguments, only the filename ($6) is used atm.
 FILENAME="$6"
 
+# The extra number of bytes we send.
+EXTRA_BYTES=0
+
+# Prefix with escape (033) + I, to indicate that this is an IDB file.
+printf "\033I"
+EXTRA_BYTES="${EXTRA_BYTES} + 2"
+
 # Pass the document through unmolested. We only want to terminate
 # the document with ASCII SUB (see below) in order to start printing
 # immediately (printer should print after 5 seconds anyway, but
@@ -11,6 +18,7 @@ cat "$FILENAME"
 
 # ASCII SUB terminates document (032).
 printf "\032"
+EXTRA_BYTES="${EXTRA_BYTES} + 1"
 
 # Check the length of the file, if the lenght of the file + the terminating
 # ASCII SUB character is a multiple of 64, add an extra SUB character. THis is
@@ -40,6 +48,7 @@ fi
 FILE_LENGTH=`wc -c $FILENAME|awk '{print $1}'`
 if test ! -z $FILE_LENGTH
 then
+	FILE_LENGTH=`expr $FILE_LENGTH + $EXTRA_BYTES`
 	FILE_LENGTH_MOD64=`expr $FILE_LENGTH % 64`
 	if test $FILE_LENGTH_MOD64 -eq 63
 	then
