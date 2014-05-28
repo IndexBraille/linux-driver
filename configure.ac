@@ -1,5 +1,5 @@
 AC_PREREQ([2.68])
-AC_INIT([printer-driver-indexbraille], [1.0.1], [support@indexbraille.com])
+AC_INIT([printer-driver-indexbraille], [1.1.0], [support@indexbraille.com])
 AM_INIT_AUTOMAKE
 
 AC_CONFIG_SRCDIR([filter/indexbraille.sh])
