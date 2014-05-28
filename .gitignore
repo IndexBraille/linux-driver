@@ -19,6 +19,7 @@ dist-deb
 ppd
 index-direct-braille
 index-direct-braille.o
+.deps/
 
 # Sublime-specific files.
 *.sublime-*
