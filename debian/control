@@ -8,7 +8,7 @@ Homepage: http://www.indexbraille.com
 
 Package: printer-driver-indexbraille
 Architecture: i386 amd64
-Depends: ${misc:Depends} libc (>= 2.13)
+Depends: ${shlibs:Depends}, ${misc:Depends}
 Recommends: cups (>= 1.4.0)
 Description: Enables CUPS printing to Index Braille printers.
  This package contans the necessary filters and PPDs for installing and
