@@ -1,8 +1,9 @@
 printer-driver-indexbraille (1.1.0-1) UNRELEASED; urgency=low
 
   * Added support for Index-direct-Braille
+  * Better MIME-handling (avoid unknown/unhandled data).
 
- -- Simon Aittamaa <simon.aittamaa@neava.se>  Wed, 28 May 2014 14:29:46 +0200
+ -- Simon Aittamaa <simon.aittamaa@neava.se>  Fri, 30 May 2014 08:22:38 +0200
 
 printer-driver-indexbraille (1.0.1-1) UNRELEASED; urgency=low
 
