@@ -1,4 +1,4 @@
 Filter text/plain 0 indexbraille.sh
-Filter application/ibe 0 -
+Filter application/x-ibe 0 -
 Filter application/pdf 0 index-direct-braille
 Filter application/msword 0 index-direct-braille

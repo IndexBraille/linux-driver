@@ -15,4 +15,5 @@ cp -r debian $DISTDIR || exit 1
 mv $DISTFILE $DEB_DIST/$DISTFILE_ORIG || exit 1
 cd $DISTDIR || exit 1
 
-debuild -us -uc
+debuild -us -uc -ai385
+debuild -us -uc -aamd64
