@@ -2,7 +2,7 @@ cupsfilterdir = $(libdir)/cups/filter
 dist_cupsfilter_SCRIPTS = filter/indexbraille.sh
 
 cupsmimedir=$(datadir)/cups/mime
-dist_mimedir_DATA = mime/indexbraille.types
+dist_cupsmime_DATA = mime/indexbraille.types
 
 cupsdrvdir = $(datadir)/cups/drv
 dist_cupsdrv_DATA = \
