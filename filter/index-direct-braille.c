@@ -26,7 +26,7 @@
  * We only buffer reading, output (to stdout) may or may not be buffered.
  */
 static char buf[8096];
-static bytes_written;
+static int bytes_written;
 
 /**
  * Send a single character to stdout, also keep track of number of bytes sent.
