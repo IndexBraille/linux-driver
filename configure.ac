@@ -13,8 +13,7 @@ then
 fi
 AC_SUBST(PPDC)
 
-
-case $os_host in
+case $host_os in
 	darwin*)
 		APREFIX=/Library/Printers
 		FILTER_PATH="${APREFIX}/Index-Braille/filter"
