@@ -1,16 +1,16 @@
-cupsfilterdir = $(libdir)/cups/filter
+cupsfilterdir = @FILTER_PATH@
 dist_cupsfilter_SCRIPTS = filter/indexbraille.sh
 
-cupsmimedir=$(datadir)/cups/mime
+cupsmimedir=@MIME_PATH@
 dist_cupsmime_DATA = mime/indexbraille.types
 
-cupsdrvdir = $(datadir)/cups/drv
+cupsdrvdir = @DRV_PATH@
 dist_cupsdrv_DATA = \
 	driver/indexbraille.drv \
 	driver/indexbraille-media.defs \
 	driver/indexbraille-filter.defs
 
-cupsppddir = $(datadir)/cups/ppd/Index-Braille
+cupsppddir = @PPD_PATH@
 dist_cupsppd_DATA = \
 	ppd/Index-Braille/4WavPRO.ppd \
 	ppd/Index-Braille/4x4PRO.ppd \

@@ -13,6 +13,28 @@ then
 fi
 AC_SUBST(PPDC)
 
+
+case $os_host in
+	darwin*)
+		APREFIX=/Library/Printers
+		FILTER_PATH="${APREFIX}/Index-Braille/filter"
+		MIME_PATH="${APREFIX}/Index-Braille/mime"
+		DRV_PATH="${APREFIX}/Index-Braille/drv"
+		PPD_PATH="${APREFIX}/PPDs"
+		;;
+	*)
+		FILTER_PATH="${libdir}/cups/filter"
+		MIME_PATH="${datadir}/cups/mime"
+		DRV_PATH="${datadir}/cups/drv"
+		PPD_PATH="${datadir}/cups/ppd/Index-Braille"
+		;;
+esac
+
+AC_SUBST(FILTER_PATH)
+AC_SUBST(MIME_PATH)
+AC_SUBST(DRV_PATH)
+AC_SUBST(PPD_PATH)
+
 AC_CONFIG_FILES([Makefile])
 AC_CONFIG_FILES([mkdeb.sh], [chmod +x mkdeb.sh])
 AC_OUTPUT
