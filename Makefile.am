@@ -18,7 +18,10 @@ dist_cupsppd_DATA = \
 	ppd/Index-Braille/BasicS.ppd \
 	ppd/Index-Braille/Everest.ppd
 
-ppd/Index-Braille/4WavPRO.ppd ppd/Index-Braille/4x4PRO.ppd ppd/Index-Braille/BasicD.ppd ppd/Index-Braille/BasicS.ppd ppd/Index-Braille/Everest.ppd: driver/indexbraille.drv driver/indexbraille-filter.defs driver/indexbraille-media.defs
+ppd/Index-Braille:
+	mkdir -p $@
+
+ppd/Index-Braille/4WavPRO.ppd ppd/Index-Braille/4x4PRO.ppd ppd/Index-Braille/BasicD.ppd ppd/Index-Braille/BasicS.ppd ppd/Index-Braille/Everest.ppd: driver/indexbraille.drv driver/indexbraille-filter.defs driver/indexbraille-media.defs ppd/Index-Braille
 	$(PPDC) -d ppd/Index-Braille/ $<
 
 cupsfilter_PROGRAMS=index-direct-braille
