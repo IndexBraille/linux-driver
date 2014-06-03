@@ -23,16 +23,16 @@ case $host_os in
 		DRV_PATH="${OSX_PRINTERS}/Index-Braille/drv"
 		PPD_PATH="${OSX_PRINTERS}/PPDs/Contents/Resources"
 		PPD_PREFIX="Index-Braille-"
-		PPD_FILTER="s|^\(\*cupsFilter: \\\".*\)\(index-direct-braille\\\"\)|\1${FILTER_PATH}/\2|g"
 		FILTER_PATH="${OSX_PRINTERS}/Index-Braille/filter"
+		PPD_FILTER="s|^\(\*cupsFilter: \\\".*\)\(index-direct-braille\\\"\)|\1${FILTER_PATH}/\2|g"
 		;;
 	*)
 		MIME_PATH="${datadir}/cups/mime"
 		DRV_PATH="${datadir}/cups/drv"
 		PPD_PATH="${datadir}/cups/ppd/Index-Braille"
 		PPD_PREFIX=""
-		PPD_FILTER=""
 		FILTER_PATH="${libdir}/cups/filter"
+		PPD_FILTER=""
 		;;
 esac
 

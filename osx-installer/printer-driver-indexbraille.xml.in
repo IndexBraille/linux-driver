@@ -5,10 +5,10 @@
 	<domains enable_localSystem="true"/>
 	<options customize="never" require-scripts="false"/>
 
-	<welcome file="welcome.html" mime-type="text/plain" />
-	<license file="license.html" mime-type="text/plain" />
-	<readme file="readme.html" mime-type="text/plain" />
-	<conclusion file="conclusion.html" mime-type="text/plain" />
+	<welcome file="welcome.html" mime-type="text/html" />
+	<license file="license.html" mime-type="text/html" />
+	<readme file="readme.html" mime-type="text/html" />
+	<conclusion file="conclusion.html" mime-type="text/html" />
 
 	<pkg-ref id="se.indexbraille.Index-direct-Braille.usr"/>
 	<pkg-ref id="se.indexbraille.Index-direct-Braille.Library"/>
