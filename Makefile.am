@@ -1,5 +1,5 @@
 cupsfilterdir = @FILTER_PATH@
-dist_cupsfilter_SCRIPTS = filter/indexbraille.sh
+dist_cupsfilter_SCRIPTS = filter/index-braille.sh
 
 cupsmimedir=@MIME_PATH@
 dist_cupsmime_DATA = mime/indexbraille.types
