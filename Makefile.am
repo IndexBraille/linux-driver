@@ -43,15 +43,21 @@ clean-local:
 	rm -rf ppd
 
 # Update this in order to "upgrade" older package.
-OSX_PKG_VERSION=1
+OSX_PKG_VERSION=@VERSION@
 pkg:
 	make clean
 	make CFLAGS="-arch i386 -arch x86_64" LDFLAGS="-arch i386 -arch x86_64"
 	make DESTDIR=staged-dir install
 	pkgbuild \
-		--identifier com.Index-Braille.Index-direct-Braille \
+		--identifier se.indexbraille.Index-direct-Braille.Libary \
 		--version $(OSX_PKG_VERSION) \
 		--install-location /Library \
-		--root staged-dir \
-		@PACKAGE@.pkg
+		--root staged-dir/Library \
+		@PACKAGE@-library.pkg
+	pkgbuild \
+		--identifier se.indexbraille.Index-direct-Braille.usr \
+		--version $(OSX_PKG_VERSION) \
+		--install-location /usr \
+		--root staged-dir/usr \
+		@PACKAGE@-usr.pkg
 	rm -rf staged-dir
