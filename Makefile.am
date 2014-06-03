@@ -19,6 +19,7 @@ dist_cupsppd_DATA = \
 	ppd/Index-Braille/$(PPD_PREFIX)Everest.ppd.gz
 
 %.ppd.gz: %.ppd
+	test ! -z "$(PPD_FILTER)" && sed -ie "$(PPD_FILTER)" $< || true
 	gzip -c $< > $@
 
 ppd/Index-Braille:

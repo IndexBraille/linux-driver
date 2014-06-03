@@ -22,6 +22,7 @@ case $host_os in
 		DRV_PATH="${APREFIX}/Index-Braille/drv"
 		PPD_PATH="${APREFIX}/PPDs/Contents/Resources"
 		PPD_PREFIX="Index-Braille-"
+		PPD_FILTER="s|^\(\*cupsFilter: \\\".*\)\(index-direct-braille\\\"\)|\1${FILTER_PATH}/\2|g"
 		;;
 	*)
 		FILTER_PATH="${libdir}/cups/filter"
@@ -29,6 +30,7 @@ case $host_os in
 		DRV_PATH="${datadir}/cups/drv"
 		PPD_PATH="${datadir}/cups/ppd/Index-Braille"
 		PPD_PREFIX=""
+		PPD_FILTER=""
 		;;
 esac
 
@@ -37,6 +39,7 @@ AC_SUBST(MIME_PATH)
 AC_SUBST(DRV_PATH)
 AC_SUBST(PPD_PATH)
 AC_SUBST(PPD_PREFIX)
+AC_SUBST(PPD_FILTER)
 
 AC_CONFIG_FILES([Makefile])
 AC_CONFIG_FILES([mkdeb.sh], [chmod +x mkdeb.sh])
