@@ -18,8 +18,11 @@ mkdeb.sh
 dist-deb
 ppd
 index-direct-braille
-index-direct-braille.o
+filter/index-braille.sh
+filter/index-direct-braille.o
 .deps/
+osx-installer/*.html
+osx-installer/*.xml
 
 # Sublime-specific files.
 *.sublime-*

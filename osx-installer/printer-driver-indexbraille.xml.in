@@ -9,32 +9,32 @@
 	<license file="license.html" mime-type="text/html" />
 	<conclusion file="conclusion.html" mime-type="text/html" />
 
-	<pkg-ref id="se.indexbraille.Index-direct-Braille.usr"/>
-	<pkg-ref id="se.indexbraille.Index-direct-Braille.Library"/>
+	<pkg-ref id="se.indexbraille.printer-driver.usr"/>
+	<pkg-ref id="se.indexbraille.printer-driver.Library"/>
 
 	<choices-outline>
 		<line choice="default">
-			<line choice="se.indexbraille.Index-direct-Braille.Library"/>
-			<line choice="se.indexbraille.Index-direct-Braille.usr"/>
+			<line choice="se.indexbraille.printer-driver.Library"/>
+			<line choice="se.indexbraille.printer-driver.usr"/>
 		</line>
 	</choices-outline>
 
 	<choice id="default"/>
-	<choice id="se.indexbraille.Index-direct-Braille.Library" visible="false">
-		<pkg-ref id="se.indexbraille.Index-direct-Braille.Library"/>
+	<choice id="se.indexbraille.printer-driver.Library" visible="false">
+		<pkg-ref id="se.indexbraille.printer-driver.Library"/>
 	</choice>
 
-	<pkg-ref id="se.indexbraille.Index-direct-Braille.Library">
+	<pkg-ref id="se.indexbraille.printer-driver.Library">
 		@PACKAGE@-library-@VERSION@.pkg
 	</pkg-ref>
 
 
-	<choice id="se.indexbraille.Index-direct-Braille.usr" visible="false">
-		<pkg-ref id="se.indexbraille.Index-direct-Braille.usr"/>
+	<choice id="se.indexbraille.printer-driver.usr" visible="false">
+		<pkg-ref id="se.indexbraille.printer-driver.usr"/>
 	</choice>
 
 
-	<pkg-ref id="se.indexbraille.Index-direct-Braille.usr">
+	<pkg-ref id="se.indexbraille.printer-driver.usr">
 		@PACKAGE@-usr-@VERSION@.pkg
 	</pkg-ref>
 
