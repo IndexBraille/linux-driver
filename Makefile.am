@@ -47,7 +47,7 @@ clean-local:
 dist-osx:
 	mkdir -p dist-osx
 	pkgbuild \
-		--identifier se.indexbraille.Index-direct-Braille.Libary \
+		--identifier se.indexbraille.Index-direct-Braille.Library \
 		--version @VERSION@ \
 		--install-location /Library \
 		--root staged-dir/Library \
@@ -71,3 +71,12 @@ pkg:
 	make DESTDIR=staged-dir install
 	make dist-osx
 	rm -rf staged-dir
+
+deb: mkdeb.sh
+	./mkdeb.sh
+
+pkg-uninstall:
+	pkgutil --only-files --files se.indexbraille.Index-direct-Braille.Library | sudo xargs rm
+	pkgutil --only-files --files se.indexbraille.Index-direct-Braille.usr | sudo xargs rm
+	sudo pkgutil --forget se.indexbraille.Index-direct-Braille.Library
+	sudo pkgutil --forget se.indexbraille.Index-direct-Braille.usr
