@@ -40,3 +40,13 @@ index_direct_braille_SOURCES=filter/index-direct-braille.c
 
 clean-local:
 	rm -rf ppd
+
+# Update this in order to "upgrade" older package.
+OSX_PKG_VERSION=1
+pkg:
+	make DESTDIR=staged-dir install
+	pkgbuild \
+		--root staged-dir \
+		--identifier com.Index-Braille.Index-direct-Braille \
+		--version $(OSX_PKG_VERSION) \
+		--install-location /Library
