@@ -46,23 +46,25 @@ clean-local:
 
 dist-osx:
 	mkdir -p dist-osx
-
-# Update this in order to "upgrade" older package.
-OSX_PKG_VERSION=@VERSION@
-pkg: dist-osx
-	make clean
-	make CFLAGS="-arch i386 -arch x86_64" LDFLAGS="-arch i386 -arch x86_64"
-	make DESTDIR=staged-dir install
 	pkgbuild \
 		--identifier se.indexbraille.Index-direct-Braille.Libary \
 		--version $(OSX_PKG_VERSION) \
 		--install-location /Library \
 		--root staged-dir/Library \
-		$</@PACKAGE@-library.pkg
+		dist-osx/@PACKAGE@-library.pkg
 	pkgbuild \
 		--identifier se.indexbraille.Index-direct-Braille.usr \
 		--version $(OSX_PKG_VERSION) \
 		--install-location /usr \
 		--root staged-dir/usr \
-		$</@PACKAGE@-usr.pkg
+		dist-osx/@PACKAGE@-usr.pkg
+
+# Update this in order to "upgrade" older package.
+OSX_PKG_VERSION=@VERSION@
+pkg:
+	make clean
+	make CFLAGS="-arch i386 -arch x86_64" LDFLAGS="-arch i386 -arch x86_64"
+
+	make DESTDIR=staged-dir install
+	make dist-osx
 	rm -rf staged-dir
