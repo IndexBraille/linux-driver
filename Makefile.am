@@ -62,7 +62,7 @@ dist-osx:
 		--distribution osx-installer/printer-driver-indexbraille.xml \
 		--resource osx-installer \
 		--package-path dist-osx \
-		printer-driver-indexbraille-@VERSION@.pkg
+		dist-osx/@PACKAGE@-@VERSION@.pkg
 
 pkg:
 	make clean
