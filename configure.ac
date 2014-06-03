@@ -13,6 +13,7 @@ then
 fi
 AC_SUBST(PPDC)
 
+AC_CANONICAL_HOST
 case $host_os in
 	darwin*)
 		APREFIX=/Library/Printers
