@@ -51,17 +51,18 @@ dist-osx:
 		--version @VERSION@ \
 		--install-location /Library \
 		--root staged-dir/Library \
-		dist-osx/@PACKAGE@-library@VERSION@.pkg
+		dist-osx/@PACKAGE@-library-@VERSION@.pkg
 	pkgbuild \
 		--identifier se.indexbraille.Index-direct-Braille.usr \
 		--version @VERSION@ \
 		--install-location /usr \
 		--root staged-dir/usr \
 		dist-osx/@PACKAGE@-usr-@VERSION@.pkg
-	cd dist-osx && productbuild \
-		--distribution ../osx-installer/printer-driver-indexbraille.xml \
-		--resource ../osx-installer \
-		@PACKAGE@-@VERSION@.pkg
+	productbuild \
+		--distribution osx-installer/printer-driver-indexbraille.xml \
+		--resource osx-installer \
+		--package-path dist-osx \
+		dist-osx/@PACKAGE@-@VERSION@.pkg
 
 pkg:
 	make clean
