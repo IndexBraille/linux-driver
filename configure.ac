@@ -24,7 +24,7 @@ case $host_os in
 		PPD_PATH="${OSX_PRINTERS}/PPDs/Contents/Resources"
 		PPD_PREFIX="Index-Braille-"
 		FILTER_PATH="${OSX_PRINTERS}/Index-Braille/filter"
-		PPD_FILTER="s|^\(\*cupsFilter: \\\".*\)\(index-.*braille.*\\\"\)|\1${FILTER_PATH}/\2|g"
+		PPD_FILTER="s|^\(\*cupsFilter: \\\".*\) \(index-[^ ]*braille[^ ]*\\\"\)|\1 ${FILTER_PATH}/\2|g"
 		;;
 	*)
 		MIME_PATH="${datadir}/cups/mime"
