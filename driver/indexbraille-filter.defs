@@ -1,4 +1,8 @@
+// Raw files, i.e. no processing required.
+Filter application/x-index-braille-document 0 -
+Filter application/x-index-braille-firmware 0 -
+
+// Index-direct-Braille files, i.e. needs a header and processing (escaping).
 Filter text/plain 0 index-direct-braille
-Filter application/x-ibe 0 -
 Filter application/pdf 0 index-direct-braille
 Filter application/msword 0 index-direct-braille
