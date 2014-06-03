@@ -48,24 +48,22 @@ dist-osx:
 	mkdir -p dist-osx
 	pkgbuild \
 		--identifier se.indexbraille.Index-direct-Braille.Libary \
-		--version $(OSX_PKG_VERSION) \
+		--version @VERSION@ \
 		--install-location /Library \
 		--root staged-dir/Library \
-		dist-osx/@PACKAGE@-library.pkg
+		dist-osx/@PACKAGE@-library@VERSION@.pkg
 	pkgbuild \
 		--identifier se.indexbraille.Index-direct-Braille.usr \
-		--version $(OSX_PKG_VERSION) \
+		--version @VERSION@ \
 		--install-location /usr \
 		--root staged-dir/usr \
-		dist-osx/@PACKAGE@-usr.pkg
+		dist-osx/@PACKAGE@-usr-@VERSION@.pkg
 	productbuild \
 		--distribution osx-installer/printer-driver-indexbraille.xml \
 		--resource osx-installer \
 		--package-path dist-osx \
-		printer-driver-indexbraille.pkg
+		printer-driver-indexbraille-@VERSION@.pkg
 
-# Update this in order to "upgrade" older package.
-OSX_PKG_VERSION=@VERSION@
 pkg:
 	make clean
 	make CFLAGS="-arch i386 -arch x86_64" LDFLAGS="-arch i386 -arch x86_64"

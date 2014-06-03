@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
 <installer-gui-script minSpecVersion="1">
-	<title>Index Braille Printer Driver @VERSION@</title>
+	<title>Index Braille Printer Driver - @VERSION@</title>
 	<organization>se.indexbraille</organization>
 	<domains enable_localSystem="true"/>
 	<options customize="never" require-scripts="true" rootVolumeOnly="true" />
@@ -11,10 +11,10 @@
 	<conclusion file="conclusion.html" mime-type="text/plain" />
 
 	<pkg-ref id="se.indexbraille.Index-direct-Braille.Libary">
-		@PACKAGE@-library.pkg
+		@PACKAGE@-library-@VERSION@.pkg
 	</pkg-ref>
 	<pkg-ref id="se.indexbraille.Index-direct-Braille.usr">
-		@PACKAGE@-usr.pkg
+		@PACKAGE@-usr-@VERSION@.pkg
 	</pkg-ref>
 
 	<choices-outline>
