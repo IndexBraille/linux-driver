@@ -76,7 +76,7 @@ deb: mkdeb.sh
 	./mkdeb.sh
 
 pkg-uninstall:
-	pkgutil --only-files --files se.indexbraille.Index-direct-Braille.Library | sudo xargs rm
-	pkgutil --only-files --files se.indexbraille.Index-direct-Braille.usr | sudo xargs rm
+	(cd /Library && pkgutil --only-files --files se.indexbraille.Index-direct-Braille.Library | sudo xargs rm)
+	(cd /usr && pkgutil --only-files --files se.indexbraille.Index-direct-Braille.usr | sudo xargs rm)
 	sudo pkgutil --forget se.indexbraille.Index-direct-Braille.Library
 	sudo pkgutil --forget se.indexbraille.Index-direct-Braille.usr
