@@ -21,12 +21,14 @@ case $host_os in
 		MIME_PATH="${APREFIX}/Index-Braille/mime"
 		DRV_PATH="${APREFIX}/Index-Braille/drv"
 		PPD_PATH="${APREFIX}/PPDs/Contents/Resources"
+		PPD_PREFIX="Index-Braille-"
 		;;
 	*)
 		FILTER_PATH="${libdir}/cups/filter"
 		MIME_PATH="${datadir}/cups/mime"
 		DRV_PATH="${datadir}/cups/drv"
 		PPD_PATH="${datadir}/cups/ppd/Index-Braille"
+		PPD_PREFIX=""
 		;;
 esac
 
@@ -34,6 +36,7 @@ AC_SUBST(FILTER_PATH)
 AC_SUBST(MIME_PATH)
 AC_SUBST(DRV_PATH)
 AC_SUBST(PPD_PATH)
+AC_SUBST(PPD_PREFIX)
 
 AC_CONFIG_FILES([Makefile])
 AC_CONFIG_FILES([mkdeb.sh], [chmod +x mkdeb.sh])

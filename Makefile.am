@@ -12,17 +12,20 @@ dist_cupsdrv_DATA = \
 
 cupsppddir = @PPD_PATH@
 dist_cupsppd_DATA = \
-	ppd/Index-Braille/4WavPRO.ppd.gz \
-	ppd/Index-Braille/4x4PRO.ppd.gz \
-	ppd/Index-Braille/BasicD.ppd.gz \
-	ppd/Index-Braille/BasicS.ppd.gz \
-	ppd/Index-Braille/Everest.ppd.gz
+	ppd/Index-Braille/$(PPD_PREFIX)4WavPRO.ppd.gz \
+	ppd/Index-Braille/$(PPD_PREFIX)4x4PRO.ppd.gz \
+	ppd/Index-Braille/$(PPD_PREFIX)BasicD.ppd.gz \
+	ppd/Index-Braille/$(PPD_PREFIX)BasicS.ppd.gz \
+	ppd/Index-Braille/$(PPD_PREFIX)Everest.ppd.gz
 
 %.ppd.gz: %.ppd
 	gzip -c $< > $@
 
 ppd/Index-Braille:
 	mkdir -p $@
+
+$(PPD_PREFIX)%.ppd.gz: %.ppd.gz
+	mv $< $@
 
 ppd/Index-Braille/4WavPRO.ppd \
 ppd/Index-Braille/4x4PRO.ppd \
