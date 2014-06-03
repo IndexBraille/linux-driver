@@ -16,21 +16,23 @@ AC_SUBST(PPDC)
 AC_CANONICAL_HOST
 case $host_os in
 	darwin*)
-		APREFIX=/Library/Printers
-		FILTER_PATH="${APREFIX}/Index-Braille/filter"
-		MIME_PATH="${APREFIX}/Index-Braille/mime"
-		DRV_PATH="${APREFIX}/Index-Braille/drv"
-		PPD_PATH="${APREFIX}/PPDs/Contents/Resources"
+		OPX_CUPS=/usr/share/cups
+		OSX_PRINTERS=/Library/Printers
+
+		MIME_PATH="${OSX_CUPS}/mime"
+		DRV_PATH="${OSX_PRINTERS}/Index-Braille/drv"
+		PPD_PATH="${OSX_PRINTERS}/PPDs/Contents/Resources"
 		PPD_PREFIX="Index-Braille-"
 		PPD_FILTER="s|^\(\*cupsFilter: \\\".*\)\(index-direct-braille\\\"\)|\1${FILTER_PATH}/\2|g"
+		FILTER_PATH="${OSX_PRINTERS}/Index-Braille/filter"
 		;;
 	*)
-		FILTER_PATH="${libdir}/cups/filter"
 		MIME_PATH="${datadir}/cups/mime"
 		DRV_PATH="${datadir}/cups/drv"
 		PPD_PATH="${datadir}/cups/ppd/Index-Braille"
 		PPD_PREFIX=""
 		PPD_FILTER=""
+		FILTER_PATH="${libdir}/cups/filter"
 		;;
 esac
 
