@@ -1,6 +1,6 @@
 ################################################################################
 # Mime types that we can handle with the printer, the msword type is taken
 # from CUPS, but seems to be disable by default.
-application/msword			doc string(0,<D0CF11E0A1B11AE1>)
-application/x-index-braille-document	txt string(0,<1b44>)
-application/x-index-braille-firmware	ibe string(0,<1b74>)
+application/msword				doc string(0,<D0CF11E0A1B11AE1>)
+application/x-index-braille-embosser-document	txt string(0,<1b44>)
+application/x-index-braille-embosser-firmware	ibe string(0,<1b74>)
