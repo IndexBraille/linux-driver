@@ -1,5 +1,7 @@
 #!/bin/sh
 
+echo "INFO: $0 version @VERSION@ started." >> /dev/stderr
+
 # Arguments, only filename ($6) and copies are used atm.
 COPIES="${4}"
 FILENAME="${6}"
