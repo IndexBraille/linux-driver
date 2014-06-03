@@ -78,5 +78,5 @@ deb: mkdeb.sh
 pkg-uninstall:
 	(cd /Library && pkgutil --only-files --files se.indexbraille.printer-driver.Library | sudo xargs rm)
 	(cd /usr && pkgutil --only-files --files se.indexbraille.printer-driver.usr | sudo xargs rm)
-	sudo pkgutil --forget se.indexbraille.index-printer-driver.Library
-	sudo pkgutil --forget se.indexbraille.Index-direct-Braille.usr
+	sudo pkgutil --forget se.indexbraille.printer-driver.Library
+	sudo pkgutil --forget se.indexbraille.printer-driver.usr
