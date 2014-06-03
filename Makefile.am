@@ -58,7 +58,7 @@ dist-osx:
 		--install-location /usr \
 		--root staged-dir/usr \
 		dist-osx/@PACKAGE@-usr-@VERSION@.pkg
-	cd dist-os && productbuild \
+	cd dist-osx && productbuild \
 		--distribution ../osx-installer/printer-driver-indexbraille.xml \
 		--resource ../osx-installer \
 		@PACKAGE@-@VERSION@.pkg
