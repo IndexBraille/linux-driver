@@ -16,7 +16,7 @@ AC_SUBST(PPDC)
 AC_CANONICAL_HOST
 case $host_os in
 	darwin*)
-		OPX_CUPS=/usr/share/cups
+		OSX_CUPS=/usr/share/cups
 		OSX_PRINTERS=/Library/Printers
 
 		MIME_PATH="${OSX_CUPS}/mime"
