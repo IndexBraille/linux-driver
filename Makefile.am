@@ -58,11 +58,10 @@ dist-osx:
 		--install-location /usr \
 		--root staged-dir/usr \
 		dist-osx/@PACKAGE@-usr-@VERSION@.pkg
-	productbuild \
-		--distribution osx-installer/printer-driver-indexbraille.xml \
-		--resource osx-installer \
-		--package-path dist-osx \
-		dist-osx/@PACKAGE@-@VERSION@.pkg
+	cd dist-os && productbuild \
+		--distribution ../osx-installer/printer-driver-indexbraille.xml \
+		--resource ../osx-installer \
+		@PACKAGE@-@VERSION@.pkg
 
 pkg:
 	make clean
