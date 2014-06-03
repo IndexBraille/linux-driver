@@ -45,4 +45,5 @@ AC_SUBST(PPD_FILTER)
 
 AC_CONFIG_FILES([Makefile])
 AC_CONFIG_FILES([mkdeb.sh], [chmod +x mkdeb.sh])
+AC_CONFIG_FILES([osx-installer/printer-driver-indexbraille.xml])
 AC_OUTPUT
