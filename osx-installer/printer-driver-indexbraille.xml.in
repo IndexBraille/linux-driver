@@ -3,41 +3,41 @@
 	<title>Index Braille Printer Driver - @VERSION@</title>
 	<organization>se.indexbraille</organization>
 	<domains enable_localSystem="true"/>
-	<options customize="never" require-scripts="true" rootVolumeOnly="true" />
+	<options customize="never" require-scripts="false"/>
 
 	<welcome file="welcome.html" mime-type="text/plain" />
 	<license file="license.html" mime-type="text/plain" />
 	<readme file="readme.html" mime-type="text/plain" />
 	<conclusion file="conclusion.html" mime-type="text/plain" />
 
+	<pkg-ref id="se.indexbraille.Index-direct-Braille.usr"/>
+	<pkg-ref id="se.indexbraille.Index-direct-Braille.Library"/>
+
+	<choices-outline>
+		<line choice="default">
+			<line choice="se.indexbraille.Index-direct-Braille.Library"/>
+			<line choice="se.indexbraille.Index-direct-Braille.usr"/>
+		</line>
+	</choices-outline>
+
+	<choice id="default"/>
+	<choice id="se.indexbraille.Index-direct-Braille.Library" visible="false">
+		<pkg-ref id="se.indexbraille.Index-direct-Braille.Library"/>
+	</choice>
+
 	<pkg-ref id="se.indexbraille.Index-direct-Braille.Library">
 		@PACKAGE@-library-@VERSION@.pkg
 	</pkg-ref>
+
+
+	<choice id="se.indexbraille.Index-direct-Braille.usr" visible="false">
+		<pkg-ref id="se.indexbraille.Index-direct-Braille.usr"/>
+	</choice>
+
+
 	<pkg-ref id="se.indexbraille.Index-direct-Braille.usr">
 		@PACKAGE@-usr-@VERSION@.pkg
 	</pkg-ref>
 
-	<choices-outline>
-		<line choice="se.indexbraille.Index-direct-Braille.Library"/>
-		<line choice="se.indexbraille.Index-direct-Braille.usr"/>
-	</choices-outline>
-
-	<choice
-		id="se.indexbraille.Index-direct-Braille.Library"
-		visible="false"
-		title="Index Braille Printer Driver"
-		description="Driver files for Index Braille embossers."
-		start_selected="true">
-		<pkg-ref id="se.indexbraille.Index-direct-Braille.Library"/>
-	</choice>
-
-	<choice
-		id="se.indexbraille.Index-direct-Braille.usr"
-		visible="false"
-		title="Index Braille Printer Driver (MIME-types)"
-		description="MIME-type files for Index Braille embossers."
-		start_selected="true">
-		<pkg-ref id="se.indexbraille.Index-direct-Braille.usr"/>
-	</choice>
 
 </installer-gui-script>
