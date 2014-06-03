@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<installer-gui-script minSpecVersion="1">
+	<title>Index Braille Printer Driver @VERSION@</title>
+	<organization>se.indexbraille</organization>
+	<domains enable_localSystem="true"/>
+	<options customize="never" require-scripts="true" rootVolumeOnly="true" />
+
+	<welcome file="welcome.html" mime-type="text/plain" />
+	<license file="license.html" mime-type="text/plain" />
+	<readme file="readme.html" mime-type="text/plain" />
+	<conclusion file="conclusion.html" mime-type="text/plain" />
+
+	<pkg-ref id="se.indexbraille.Index-direct-Braille.Libary">
+		@PACKAGE@-library.pkg
+	</pkg-ref>
+	<pkg-ref id="se.indexbraille.Index-direct-Braille.usr">
+		@PACKAGE@-usr.pkg
+	</pkg-ref>
+
+	<choices-outline>
+		<line choice="se.indexbraille.Index-direct-Braille.Libary"/>
+		<line choice="se.indexbraille.Index-direct-Braille.usr"/>
+	</choices-outline>
+
+	<choice
+		id="se.indexbraille.Index-direct-Braille.Libary"
+		visible="false"
+		title="Index Braille Printer Driver"
+		description="Driver files for Index Braille embossers."
+		start_selected="true">
+		<pkg-ref id="se.indexbraille.Index-direct-Braille.Libary"/>
+	</choice>
+
+	<choice
+		id="se.indexbraille.Index-direct-Braille.usr"
+		visible="false"
+		title="Index Braille Printer Driver (MIME-types)"
+		description="MIME-type files for Index Braille embossers."
+		start_selected="true">
+		<pkg-ref id="se.indexbraille.Index-direct-Braille.usr"/>
+	</choice>
+
+</installer-gui-script>

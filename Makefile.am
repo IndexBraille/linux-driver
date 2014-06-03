@@ -58,6 +58,11 @@ dist-osx:
 		--install-location /usr \
 		--root staged-dir/usr \
 		dist-osx/@PACKAGE@-usr.pkg
+	productbuild \
+		--distrubution osx-installer/printer-driver-indexbraille.xml \
+		--resource osx-installer \
+		--package dist-osx \
+		printer-driver-indexbraille.pkg
 
 # Update this in order to "upgrade" older package.
 OSX_PKG_VERSION=@VERSION@
