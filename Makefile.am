@@ -46,7 +46,9 @@ OSX_PKG_VERSION=1
 pkg:
 	make DESTDIR=staged-dir install
 	pkgbuild \
-		--root staged-dir \
 		--identifier com.Index-Braille.Index-direct-Braille \
 		--version $(OSX_PKG_VERSION) \
-		--install-location /Library
+		--install-location /Library \
+		--root staged-dir \
+		@PACKAGE@.pkg
+	rm -rf staged-dir
