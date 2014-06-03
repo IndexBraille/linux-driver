@@ -20,7 +20,7 @@ case $host_os in
 		FILTER_PATH="${APREFIX}/Index-Braille/filter"
 		MIME_PATH="${APREFIX}/Index-Braille/mime"
 		DRV_PATH="${APREFIX}/Index-Braille/drv"
-		PPD_PATH="${APREFIX}/PPDs"
+		PPD_PATH="${APREFIX}/PPDs/Contents/Resources"
 		;;
 	*)
 		FILTER_PATH="${libdir}/cups/filter"
