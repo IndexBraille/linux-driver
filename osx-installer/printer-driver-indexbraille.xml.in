@@ -10,7 +10,7 @@
 	<readme file="readme.html" mime-type="text/plain" />
 	<conclusion file="conclusion.html" mime-type="text/plain" />
 
-	<pkg-ref id="se.indexbraille.Index-direct-Braille.Libary">
+	<pkg-ref id="se.indexbraille.Index-direct-Braille.Library">
 		@PACKAGE@-library-@VERSION@.pkg
 	</pkg-ref>
 	<pkg-ref id="se.indexbraille.Index-direct-Braille.usr">
@@ -18,17 +18,17 @@
 	</pkg-ref>
 
 	<choices-outline>
-		<line choice="se.indexbraille.Index-direct-Braille.Libary"/>
+		<line choice="se.indexbraille.Index-direct-Braille.Library"/>
 		<line choice="se.indexbraille.Index-direct-Braille.usr"/>
 	</choices-outline>
 
 	<choice
-		id="se.indexbraille.Index-direct-Braille.Libary"
+		id="se.indexbraille.Index-direct-Braille.Library"
 		visible="false"
 		title="Index Braille Printer Driver"
 		description="Driver files for Index Braille embossers."
 		start_selected="true">
-		<pkg-ref id="se.indexbraille.Index-direct-Braille.Libary"/>
+		<pkg-ref id="se.indexbraille.Index-direct-Braille.Library"/>
 	</choice>
 
 	<choice
