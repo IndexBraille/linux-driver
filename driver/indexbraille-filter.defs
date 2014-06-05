@@ -1,6 +1,6 @@
 // Raw files, i.e. no processing required.
-Filter application/x-index-braille-embosser-document 0 -
-Filter application/x-index-braille-embosser-firmware 0 -
+Filter application/x-idx-doc 0 -
+Filter application/x-idx-fw 0 -
 
 // Index-direct-Braille files, i.e. needs a header and processing (escaping).
 Filter text/plain 0 index-braille.sh
