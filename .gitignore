@@ -24,8 +24,13 @@ filter/index-direct-braille.o
 .deps/
 osx-installer/*.html
 osx-installer/*.xml
+COPYING
+compile
+
+# MAC-Related junk.
+/**/.DS_Store
+/**/.dirstamp
 
 # Sublime-specific files.
 *.sublime-*
 last.verification.log
-COPYING
