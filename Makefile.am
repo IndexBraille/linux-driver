@@ -1,3 +1,5 @@
+AUTOMAKE_OPTIONS = foreign
+
 cupsfilterdir = @FILTER_PATH@
 dist_cupsfilter_SCRIPTS = filter/index-braille.sh
 
