@@ -1,7 +1,7 @@
 ################################################################################
 # Index Braille MIME-types handled by the printer.
-application/x-index-braille-embosser-document	txt string(0,<1b44>)
-application/x-index-braille-embosser-firmware	ibe string(0,<1b74>)
+application/x-idx-doc	txt string(0,<1b44>)
+application/x-idx-fw	ibe string(0,<1b74>)
 
 ################################################################################
 # Other MIME-types that can be handled (non-Index-Braille). The msword type is
