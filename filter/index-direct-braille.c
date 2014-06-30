@@ -22,6 +22,9 @@
 #include <string.h>
 #include <stdlib.h>
 
+#include <unistd.h>
+#include <fcntl.h>
+
 /**
  * We only buffer reading, output (to stdout) may or may not be buffered.
  */
@@ -39,7 +42,7 @@ static void output(int c) {
 	 */
 	bytes_written++;
 	if (fputc(c, stdout) == EOF) {
-		fprintf(stderr, "ERROR: Unable to write to stdout: %s.\r\n", strerror(errno));
+		fprintf(stderr, "ERROR: Unable to write to stdout: %s.\n", strerror(errno));
 		exit(1);
 	}
 }
@@ -65,8 +68,10 @@ enum {
  * @return      0 upon success, 1 upon failure (see CUPS filter programming).
  */
 int main(int argc, char **argv) {
+	int i;
+	int input = STDIN_FILENO;
 	char *tmp;
-	FILE* input;
+	const char * const filename = argv[6];
 	long int copies = 1;
 
 	/**
@@ -83,28 +88,45 @@ int main(int argc, char **argv) {
 	 */
 	signal(SIGTERM, SIG_IGN);
 
-	/** No support for chaining, we need to be the first filter. */
-	if (argc < 6) {
-		fprintf(stderr, "ERROR: Invalid number of arguments %d, expected 6.\r\n", argc);
-		fprintf(stderr, "ERROR: Is this the first filter in the chain?\r\n");
+	/**
+	 * Update status (usually never seen, transfer is to short).
+	 */
+	fprintf(stderr, "INFO: Sending data to printer\n");
+
+	/**
+	 * Debug info, usually not visible.
+	 */
+	fprintf(stderr, "DEBUG: ARGV(%d): %s ", argc, argv[0]);
+	for (i=1;i<argc;i++) {
+		fprintf(stderr, " %s ", argv[i]);
+	}
+	fprintf(stderr, "\n");
+
+	/** Ensure we get at least 5 and no more than 6 arguments (see CUPS filter programming API). */
+	if (argc < 6 || argc > 7) {
+		fprintf(stderr, "ERROR: Invalid number of arguments %d, expected at least 5 and less than 6.\n", argc);
 		exit(1);
 	}
 
-	/** Open file, binary mode is important. */
-	input = fopen(argv[6], "rb");
-	if (!input) {
-		fprintf(stderr, "ERROR: Unable to open '%s': %s\r\n", argv[6], strerror(errno));
-		exit(1);
+	/** Open file if filename given. */
+	if (argc == 7) {
+		input = open(argv[6], O_RDONLY);
+		if (input == -1) {
+			fprintf(stderr, "ERROR: Unable to open '%s': %s\n", argv[6], strerror(errno));
+			exit(1);
+		}
 	}
 
 	/** Check if we should produce more than one copy. */
-	copies = strtol(argv[4], &tmp, 10);
-	if (tmp == argv[4]) {
-		fprintf(stderr, "WARNING: Unable to parse number of copies '%s', assuming 1 copy.\r\n", argv[4]);
-		copies = 1;
-	} else if (copies <= 0) {
-		fprintf(stderr, "WARNING: Number of copies was negative or zero '%s', assuming 1 copy.\r\n", argv[4]);
-		copies = 1;
+	if (input != STDIN_FILENO) {
+		copies = strtol(argv[4], &tmp, 10);
+		if (tmp == argv[4]) {
+			fprintf(stderr, "WARNING: Unable to parse number of copies '%s', assuming 1 copy.\n", argv[4]);
+			copies = 1;
+		} else if (copies <= 0) {
+			fprintf(stderr, "WARNING: Number of copies was negative or zero '%s', assuming 1 copy.\n", argv[4]);
+			copies = 1;
+		}
 	}
 
 	/**
@@ -119,14 +141,12 @@ int main(int argc, char **argv) {
 	 * senquences and premature EOFs.
 	 */
 	for (;;) {
-		size_t bytes = fread(buf, 1, sizeof(buf), input);
+		ssize_t bytes = read(input, buf, sizeof(buf));
 		if (bytes == 0) {
-			if (ferror(input)) {
-				fprintf(stderr, "ERROR: Unable to read from '%s': %s\r\n", argv[6], strerror(errno));
-				exit(1);
-			}
-			/** Assume EOF. */
+			/** EOF. */
 			break;
+		} else if (bytes == -1) {
+			fprintf(stderr, "ERROR: Unable to read from file '%s': %s\n", filename, strerror(errno));
 		} else {
 			size_t i;
 			for (i=0;i<bytes;i++) {
@@ -162,6 +182,15 @@ int main(int argc, char **argv) {
 	if ((bytes_written % 64) == 0) {
 		output(SUB);
 	}
+
+	/**
+	 * Close the input file, unless it's stdin.
+	 */
+	if (input != STDIN_FILENO) {
+		close(input);
+	}
+
+	fprintf(stderr, "INFO: Ready\n");
 
 	return 0;
 }
