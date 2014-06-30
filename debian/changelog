@@ -1,3 +1,10 @@
+printer-driver-indexbraille (1.2.1-1) UNRELEASED; urgency=low
+
+  * Better adherence to CUPS filter API.
+  * Updated debian-files (to new version).
+
+ -- Simon Aittamaa <nsimait@nsimait>  Mon, 30 Jun 2014 14:37:37 +0200
+
 printer-driver-indexbraille (1.1.0-1) UNRELEASED; urgency=low
 
   * Added support for Index-direct-Braille
