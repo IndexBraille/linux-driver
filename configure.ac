@@ -1,5 +1,6 @@
 AC_PREREQ([2.68])
-AC_INIT([printer-driver-indexbraille], [1.1.0], [support@indexbraille.com])
+#AC_INIT([printer-driver-indexbraille],  m4_esyscmd_s([git describe --tags --long --always --dirty|sed -re 's|(.*)/v([^/]*)-[0-9]+-g[0-9a-f]+(-dirty)?|\2|g']), [support@indexbraille.com])
+AC_INIT([printer-driver-indexbraille],  1.2.2, [support@indexbraille.com])
 AM_INIT_AUTOMAKE([subdir-objects])
 
 AC_CONFIG_SRCDIR([filter/index-direct-braille.c])
