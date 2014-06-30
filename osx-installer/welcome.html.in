@@ -14,6 +14,12 @@
 	</p>
 	<div>
 		<dl>
+			<dt>1.2.2</dt>
+			<dd>
+				<ul>
+					<li>Improved compability with CUPS filter-API.</li>
+				</ul>
+			</dd>
 			<dt>1.1.0</dt>
 			<dd>
 				<ul>
