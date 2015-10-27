@@ -9,13 +9,11 @@
 	<license file="license.html" mime-type="text/html" />
 	<conclusion file="conclusion.html" mime-type="text/html" />
 
-	<pkg-ref id="com.indexbraille.printer-driver.usr"/>
 	<pkg-ref id="com.indexbraille.printer-driver.Library"/>
 
 	<choices-outline>
 		<line choice="default">
 			<line choice="com.indexbraille.printer-driver.Library"/>
-			<line choice="com.indexbraille.printer-driver.usr"/>
 		</line>
 	</choices-outline>
 
@@ -27,16 +25,5 @@
 	<pkg-ref id="com.indexbraille.printer-driver.Library">
 		@PACKAGE@-library-@VERSION@.pkg
 	</pkg-ref>
-
-
-	<choice id="com.indexbraille.printer-driver.usr" visible="false">
-		<pkg-ref id="com.indexbraille.printer-driver.usr"/>
-	</choice>
-
-
-	<pkg-ref id="com.indexbraille.printer-driver.usr">
-		@PACKAGE@-usr-@VERSION@.pkg
-	</pkg-ref>
-
 
 </installer-gui-script>

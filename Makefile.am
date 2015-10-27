@@ -54,12 +54,6 @@ dist-osx:
 		--install-location /Library \
 		--root staged-dir/Library \
 		dist-osx/@PACKAGE@-library-@VERSION@.pkg
-	pkgbuild \
-		--identifier com.indexbraille.printer-driver.usr \
-		--version @VERSION@ \
-		--install-location /usr \
-		--root staged-dir/usr \
-		dist-osx/@PACKAGE@-usr-@VERSION@.pkg
 	productbuild \
 		--distribution osx-installer/printer-driver-indexbraille.xml \
 		--resource osx-installer \
@@ -79,6 +73,4 @@ deb: mkdeb.sh
 
 pkg-uninstall:
 	(cd /Library && pkgutil --only-files --files com.indexbraille.printer-driver.Library | sudo xargs rm)
-	(cd /usr && pkgutil --only-files --files com.indexbraille.printer-driver.usr | sudo xargs rm)
 	sudo pkgutil --forget com.indexbraille.printer-driver.Library
-	sudo pkgutil --forget com.indexbraille.printer-driver.usr
