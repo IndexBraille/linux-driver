@@ -1,4 +1,6 @@
 CUPS filter/driver for Index Braille Embossers
 ----------------------------------------------
 
-Source-code for CUPS filter/driver for Index Braille Embossers. Available under GPLv2+.
+Source-code for CUPS filter/driver for Index Braille Embossers. Includes support for Index-direct-Braille (idB).
+
+Available under GPLv2+.
