@@ -1,25 +1,5 @@
 printer-driver-indexbraille (1.2.2-1) UNRELEASED; urgency=low
 
-  * Better adherence to CUPS filter API.
-  * Updated debian-files (to new version).
+  * Initial release. Closes: Bug#807615.
 
- -- Simon Aittamaa <simon.aittamaa@neava.se>  Mon, 30 Jun 2014 14:37:37 +0200
-
-printer-driver-indexbraille (1.1.0-1) UNRELEASED; urgency=low
-
-  * Added support for Index-direct-Braille
-  * Better MIME-handling (avoid unknown/unhandled data).
-
- -- Simon Aittamaa <simon.aittamaa@neava.se>  Fri, 30 May 2014 08:22:38 +0200
-
-printer-driver-indexbraille (1.0.1-1) UNRELEASED; urgency=low
-
-  * Fixes issue with module-64 length files.
-
- -- Simon Aittamaa <simon.aittamaa@neava.se>  Tue, 07 Jan 2014 15:54:54 +0100
-
-printer-driver-indexbraille (1.0-1) UNRELEASED; urgency=low
-
-  * Initial release.
-
- -- Simon Aittamaa <simon.aittamaa@neava.se>  Thu, 26 Sep 2013 10:19:53 +0200
+ -- Simon Aittamaa <simon@indexbraille.com>  Mon, 30 Jun 2014 14:37:37 +0200

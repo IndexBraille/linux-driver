@@ -2,14 +2,14 @@ Source: printer-driver-indexbraille
 Section: text
 Priority: optional
 Maintainer: Simon Aittamaa <simon.aittamaa@neava.se>
-Build-Depends: debhelper (>= 8.0.0), autotools-dev, cups-ppdc
-Standards-Version: 3.9.3
+Build-Depends: debhelper (>= 9.0.0), dh-autoreconf, cups-ppdc
+Standards-Version: 3.9.6
 Homepage: http://www.indexbraille.com
 
 Package: printer-driver-indexbraille
-Architecture: i386 amd64
+Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Recommends: cups (>= 1.4.0)
-Description: Enables CUPS printing to Index Braille printers.
- This package contans the necessary filters and PPDs for installing and
+Description: CUPS printing to Index Braille printers
+ This package contains the necessary filters and PPDs for installing and
  printing to Index Braille printers.
