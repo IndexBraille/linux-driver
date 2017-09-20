@@ -1,6 +1,8 @@
 CUPS filter/driver for Index Braille Embossers
 ----------------------------------------------
 
+[![Gitter](https://img.shields.io/gitter/room/nwjs/nw.js.svg)](https://gitter.im/IndexBraille/Lobby)
+
 Source-code for CUPS filter/driver for Index Braille Embossers. Includes support for Index-direct-Braille (idB).
 
 Available under GPLv2+.
