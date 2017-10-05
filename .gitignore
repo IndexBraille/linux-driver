@@ -34,3 +34,6 @@ compile
 # Sublime-specific files.
 *.sublime-*
 last.verification.log
+
+# build-folder(s)
+/build*/
