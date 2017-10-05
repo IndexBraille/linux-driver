@@ -12,30 +12,22 @@ dist_cupsdrv_DATA = \
 	driver/indexbraille-media.defs \
 	driver/indexbraille-filter.defs
 
+PPD_FILES=$(shell awk '/PCFileName/{printf "ppd/Index-Braille/%s\n", $$2}' $(top_builddir)/driver/indexbraille.drv | xargs)
+PPD_FILES_GZ=$(subst .ppd,.ppd.gz, $(PPD_FILES))
+
 cupsppddir = @PPD_PATH@
 dist_cupsppd_DATA = \
-	ppd/Index-Braille/$(PPD_PREFIX)4WavPRO.ppd.gz \
-	ppd/Index-Braille/$(PPD_PREFIX)4x4PRO.ppd.gz \
-	ppd/Index-Braille/$(PPD_PREFIX)BasicD.ppd.gz \
-	ppd/Index-Braille/$(PPD_PREFIX)BasicS.ppd.gz \
-	ppd/Index-Braille/$(PPD_PREFIX)Everest.ppd.gz
+    $(PPD_FILES_GZ)
 
 %.ppd.gz: %.ppd
 	test ! -z "$(PPD_FILTER)" && sed -i .orig -e "$(PPD_FILTER)" $< || true
 	gzip -c $< > $@
 
-ppd/Index-Braille:
+$(top_builddir)/ppd/Index-Braille:
 	mkdir -p $@
 
-$(PPD_PREFIX)%.ppd.gz: %.ppd.gz
-	mv $< $@
-
-ppd/Index-Braille/4WavPRO.ppd \
-ppd/Index-Braille/4x4PRO.ppd \
-ppd/Index-Braille/BasicD.ppd \
-ppd/Index-Braille/BasicS.ppd \
-ppd/Index-Braille/Everest.ppd: driver/indexbraille.drv driver/indexbraille-filter.defs driver/indexbraille-media.defs ppd/Index-Braille
-	$(PPDC) -d ppd/Index-Braille/ $<
+$(PPD_FILES): $(top_builddir)/driver/indexbraille.drv $(top_srcdir)/driver/indexbraille-filter.defs $(top_srcdir)/driver/indexbraille-media.defs $(top_builddir)/ppd/Index-Braille
+	$(PPDC) -d ppd/Index-Braille/ -I $(top_srcdir)/driver $<
 
 cupsfilter_PROGRAMS=index-direct-braille
 
@@ -74,3 +66,5 @@ deb: mkdeb.sh
 pkg-uninstall:
 	(cd /Library && pkgutil --only-files --files com.indexbraille.printer-driver.Library | sudo xargs rm)
 	sudo pkgutil --forget com.indexbraille.printer-driver.Library
+
+print-%  : ; @echo $* = $($*)

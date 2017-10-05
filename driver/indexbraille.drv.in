@@ -1,0 +1,159 @@
+#include <media.defs>
+
+#define MANUFACTURER "Index Braille"
+
+{
+    Manufacturer "$MANUFACTURER"
+    ModelName "Basic-S V3"
+    Version @VERSION@
+
+    PCFileName "Basic-S_V3.ppd"
+
+    HWMargins 18 36 18 36
+
+    #include "indexbraille-media.defs"
+    #include "indexbraille-filter.defs"
+}
+
+{
+    Manufacturer "$MANUFACTURER"
+    ModelName "Basic-D V3"
+    Version @VERSION@
+
+    PCFileName "Basic-D_V3.ppd"
+
+    HWMargins 18 36 18 36
+
+    #include "indexbraille-media.defs"
+    #include "indexbraille-filter.defs"
+}
+
+{
+    Manufacturer "$MANUFACTURER"
+    ModelName "Basic-D V4"
+    Version @VERSION@
+
+    PCFileName "Basic-D_V4.ppd"
+
+    HWMargins 18 36 18 36
+
+    #include "indexbraille-media.defs"
+    #include "indexbraille-filter.defs"
+}
+
+{
+    Manufacturer "$MANUFACTURER"
+    ModelName "Basic-D V5"
+    Version @VERSION@
+
+    PCFileName "Basic-D_V5.ppd"
+
+    HWMargins 18 36 18 36
+
+    #include "indexbraille-media.defs"
+    #include "indexbraille-filter.defs"
+}
+
+{
+    Manufacturer "$MANUFACTURER"
+    ModelName "Everest V3"
+    Version @VERSION@
+
+    PCFileName "Everest_V3.ppd"
+
+    HWMargins 18 36 18 36
+
+    #include "indexbraille-media.defs"
+    #include "indexbraille-filter.defs"
+}
+
+{
+  	Manufacturer "$MANUFACTURER"
+	ModelName "Everest-D V4"
+	Version @VERSION@
+
+	PCFileName "Everest-D_V4.ppd"
+
+	HWMargins 18 36 18 36
+
+	#include "indexbraille-media.defs"
+	#include "indexbraille-filter.defs"
+}
+
+{
+    Manufacturer "$MANUFACTURER"
+    ModelName "Everest-D V5"
+    Version @VERSION@
+
+    PCFileName "Everest-D_V5.ppd"
+
+    HWMargins 18 36 18 36
+
+    #include "indexbraille-media.defs"
+    #include "indexbraille-filter.defs"
+}
+
+{
+    Manufacturer "$MANUFACTURER"
+    ModelName "FanFold-D"
+    Version @VERSION@
+
+    PCFileName "FanFold-D.ppd"
+
+    HWMargins 18 36 18 36
+
+    #include "indexbraille-media.defs"
+    #include "indexbraille-filter.defs"
+}
+
+{
+    Manufacturer "$MANUFACTURER"
+    ModelName "BrailleBox V4"
+    Version @VERSION@
+
+    PCFileName "BrailleBox_V4.ppd"
+
+    HWMargins 18 36 18 36
+
+    #include "indexbraille-media.defs"
+    #include "indexbraille-filter.defs"
+}
+
+{
+    Manufacturer "$MANUFACTURER"
+    ModelName "BrailleBox V5"
+    Version @VERSION@
+
+    PCFileName "BrailleBox_V5.ppd"
+
+    HWMargins 18 36 18 36
+
+    #include "indexbraille-media.defs"
+    #include "indexbraille-filter.defs"
+}
+
+{
+	Manufacturer "$MANUFACTURER"
+	ModelName "4Waves"
+	Version @VERSION@
+
+	PCFileName "4Waves.ppd"
+
+	HWMargins 18 36 18 36
+
+	#include "indexbraille-media.defs"
+	#include "indexbraille-filter.defs"
+}
+
+{
+	Manufacturer "$MANUFACTURER"
+	ModelName "4x4 V3"
+	Version @VERSION@
+
+	PCFileName "4x4_V3.ppd"
+
+	HWMargins 18 36 18 36
+
+	#include "indexbraille-media.defs"
+	#include "indexbraille-filter.defs"
+}
