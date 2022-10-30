@@ -1,6 +1,6 @@
 ################################################################################
 # Index Braille MIME-types handled by the printer.
-application/x-idx-doc	txt string(0,<1b44>)
+application/x-idx-doc	txt + string(0,<1b44>)
 application/x-idx-fw	ibe string(0,<1b74>)
 
 ################################################################################
